@@ -1,8 +1,12 @@
 {
   "name": "odds-are-low",
   "version": "1.1.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
   "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "lint": "tsc",
     "test": "jest"
   },
   "author": "rcmtcristian",
@@ -10,5 +14,11 @@
   "description": "",
   "dependencies": {
     "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@types/jest": "^29.5.9",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
   }
 }

@@ -1,4 +1,5 @@
-const oddsL = require("odds-are-low")
+const oddsL = require("odds-are-low").default;
+
 
 // Returns "Odds are low!" when isLow is true
 it('should return "Odds are low!" when isLow is true', () => {

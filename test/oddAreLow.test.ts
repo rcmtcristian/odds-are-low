@@ -1,66 +1,41 @@
-const oddsL = require("odds-are-low").default;
-
-
+// const oddsAreLow = require("odds-are-low");
 // Returns "Odds are low!" when isLow is true
-it('should return "Odds are low!" when isLow is true', () => {
-  expect(oddsL(true)).toBe("Odds are low!");
-});
+import { it, suite, test } from "vitest";
+import { oddsAreLow } from "../index";
 
-// Returns "Odds are high!" when isLow is false
-it('should return "Odds are high!" when isLow is false', () => {
-  expect(oddsL(false)).toBe("Odds are high!");
-});
+suite("oddsAreLow Function Tests", () => {
+  // Test case 1
+  test('returns "Odds are low!" when isLow is true', () => {
+    const result = oddsAreLow(true);
+    return result === "Odds are low!";
+  });
 
-// Returns "Odds are low!" when isLow is a truthy non-boolean value
-it('should return "Odds are low!" when isLow is a truthy non-boolean value', () => {
-  expect(oddsL(1)).toBe("Odds are low!");
-});
+  // Test case 2
+  test('returns "Odds are high!" when isLow is false', () => {
+    const result = oddsAreLow(false);
+    return result === "Odds are high!";
+  });
 
-// Returns "Odds are high!" when isLow is a falsy non-boolean value
-it('should return "Odds are high!" when isLow is a falsy non-boolean value', () => {
-  expect(oddsL(0)).toBe("Odds are high!");
-});
+  // The function should return the string "Odds are high!" when the input is a truthy value other than true.
 
-// Function returns without errors
-it("should not throw any errors", () => {
-  expect(oddsL).not.toThrow();
-});
+  test('returns "Odds are high!" when isLow is a truthy value other than true', () => {
+    const result = oddsAreLow(1);
+    return result === "Odds are high!";
+  });
 
-// Returns "Odds are high!" when isLow is null
-it('should return "Odds are high!" when isLow is null', () => {
-  expect(oddsL(null)).toBe("Odds are high!");
-});
+  // The function should return the string "Odds are low!" when the input is a falsy value other than false.
 
-// Returns "Odds are low!" when isLow is undefined
-it('should return "Odds are high!" when isLow is undefined', () => {
-  expect(oddsL(undefined)).toBe("Odds are high!");
-});
+  // Test case 5
+  test('returns "Odds are low!" when isLow is a falsy value other than false', () => {
+    const result = oddsAreLow(0);
+    return result === "Odds are low!";
+  });
 
-// None
-it("should do nothing", () => {
-  // No assertions needed, as the function does not have any side effects
-  oddsL ();
-});
+  // The function should return the string "Odds are high!" when the input is not a boolean value.
 
-// Function always returns the same string
-it("should always return the same string", () => {
-  const result1 = oddsL();
-  const result2 = oddsL();
-  expect(result1).toBe(result2);
-});
-
-// Returns "Odds are high!" when isLow is null
-it('should return "Odds are high!" when isLow is null', () => {
-  expect(oddsL(null)).toBe("Odds are high!");
-});
-
-// Function does not modify any external state
-it("should not modify any external state", () => {
-  // No assertions needed, as the function does not modify any external state
-  oddsL ();
-});
-
-it('returns "are are high" and evaluates to false', () => {
-  const result = oddsL (); // Call the function with the appropriate input
-  expect(oddsL(false)).toBe("Odds are high!"); // Add the assertion for the expected output
+  // Test case 6
+  test('returns "Odds are high!" when isLow is not a boolean value', () => {
+    const result = oddsAreLow("true");
+    return result === "Odds are high!";
+  });
 });

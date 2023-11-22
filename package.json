@@ -7,20 +7,19 @@
   "scripts": {
     "build": "tsup index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "test": "jest"
+    "dev": "vitest",
+    "test": "vitest run"
   },
   "author": "rcmtcristian",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "jest": "^29.7.0"
-  },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@types/jest": "^29.5.9",
     "@types/node": "^20.9.3",
     "ts-jest": "^29.1.1",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
   }
 }

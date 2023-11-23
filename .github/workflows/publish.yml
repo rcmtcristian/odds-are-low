@@ -8,8 +8,6 @@ concurrency: ${{github.workflow}}-${{github.ref}}
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -25,3 +23,5 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

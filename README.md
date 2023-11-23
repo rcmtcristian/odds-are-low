@@ -27,3 +27,7 @@ rm pnpm-lock.yaml
 pnpm install
 pnpm config set auto-install-peers true
 ```
+
+```js
+make sure to have the right actions permissions set for you actions to run by going into the setting of your repo and then into the actions tab and then into the permissions tab and then make sure that the actions permissions are set to read and write
+```
